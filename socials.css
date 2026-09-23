@@ -1,0 +1,231 @@
+* {
+    font-family: sans-serif;
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #151522 0%, #08080a 100%);
+    background-attachment: fixed;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.header {
+    background: rgba(12, 12, 18, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+.header-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+.brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #a0a0b0;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: rgb(0, 204, 255);
+}
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.socials-card {
+    background: linear-gradient(145deg, #121218, #0d0d12);
+    border-radius: 16px;
+    width: 320px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.socials-card:hover {
+    border-color: rgb(0, 204, 255);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 204, 255, 0.2);
+}
+.socials-card.discord:hover {
+    border-color: #5865F2;
+    box-shadow: 0 10px 30px rgba(88, 101, 242, 0.3);
+}
+.socials-card.youtube:hover {
+    border-color: #FF0000;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+}
+.socials-card.tiktok:hover {
+    border-color: #FE2C55;
+    box-shadow: 0 10px 30px rgba(254, 44, 85, 0.3);
+}
+.ip-button {
+    background: linear-gradient(145deg, #121218, #0d0d12);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    width: 210px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 19px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.ip-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, rgb(0, 81, 255), rgb(0, 195, 255));
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 7px;
+    font-size: 15px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+.ip-button:focus::after {
+    opacity: 1;
+}
+.ip-button:active {
+    transform: scale(0.95);
+}
+.cards-button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.cards-button.discord-btn {
+    background: linear-gradient(to right, #404eed, #5865F2);
+}
+.cards-button.discord-btn:hover {
+    background: linear-gradient(to right, #5865F2, #7983f5);
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
+}
+.cards-button.youtube-btn {
+    background: linear-gradient(to right, #ff0101, #ff4141);
+}
+.cards-button.youtube-btn:hover {
+    background: linear-gradient(to right, #ff0000, #ff4d4d);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+.cards-button:active {
+    transform: scale(0.95);
+}
+.text {
+    color: #dadada;
+    font-size: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0 10px 0;
+    border-radius: 100%;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
+}
+.title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.socials-card i {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+#youtube {
+    color: #ff0000;
+}
+#discord {
+    color: #436cff;
+}
+/* ===== Additions ===== */
+body::before {
+    content: ""; position: fixed; top: -120px; left: 50%; width: 700px; height: 500px; transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(0, 204, 255, 0.12), transparent 65%); pointer-events: none; z-index: -1;
+}
+.hero-section { text-align: center; padding: 0 20px; margin-bottom: 20px; max-width: 640px; }
+.hero-title { font-size: 34px; font-weight: 700; margin-bottom: 8px; background: linear-gradient(to right, #fff, rgb(0, 204, 255)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-subtitle { color: #a0a0b0; font-size: 16px; line-height: 1.6; }
+.cards-container { gap: 30px; padding: 20px 20px 30px; }
+.socials-card { width: 380px; padding: 30px; position: relative; overflow: hidden; }
+.socials-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: rgb(0, 204, 255); }
+.socials-card.discord::before { background: linear-gradient(to right, #404eed, #7983f5); }
+.socials-card.youtube::before { background: linear-gradient(to right, #ff0101, #ff6b6b); }
+.socials-card i { display: block; font-size: 56px; }
+.socials-card .text { text-align: center; line-height: 1.6; margin-bottom: 14px; }
+.perks { list-style: none; margin: 4px 0 18px; }
+.perks li { color: #b8b8c8; font-size: 14px; padding: 7px 0 7px 26px; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+.perks li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: rgb(0, 204, 255); }
+.stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; padding: 0 20px; }
+.stat { text-align: center; padding: 14px 28px; border-radius: 12px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); }
+.stat b { display: block; font-size: 20px; color: rgb(0, 204, 255); }
+.stat span { color: #a0a0b0; font-size: 13px; }
+.section { width: 100%; max-width: 760px; padding: 30px 24px 10px; }
+.section-title { font-size: 26px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+.section-sub { color: #a0a0b0; text-align: center; font-size: 15px; margin-bottom: 22px; }
+.faq details {
+    background: linear-gradient(145deg, #121218, #0d0d12); border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; transition: border-color 0.3s;
+}
+.faq details:hover, .faq details[open] { border-color: rgb(0, 204, 255); }
+.faq summary { cursor: pointer; font-weight: 600; font-size: 16px; }
+.faq details p { color: #a8a8ba; font-size: 14px; line-height: 1.6; margin-top: 10px; }
+.footer {
+    width: 100%; margin-top: auto; text-align: center; padding: 26px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); background: rgba(12, 12, 18, 0.85);
+}
+.footer p { color: #8a8a9c; font-size: 14px; }
+.footer strong { color: #fff; }
+.spacer { height: 50px; }
+@media (max-width: 640px) { .header { padding: 0 16px; } .brand-name { font-size: 16px; } .nav-links { gap: 16px; } }

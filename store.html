@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pyxelon Store</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.9.96/css/materialdesignicons.min.css" integrity="sha512-8G2pIpgpIJsq+hXzWgiRCQ1q++YBWoPwTvWS7WqZh9QhCOPzzC6nQC/ZYep1g6H3D2pnlm9yXl5BtyI+c6Whog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header-brand">
+            <img src="logo.png" alt="Logo" class="header-logo">
+            <span class="brand-name">Pyxelon Network</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="store.html" class="active">Store</a></li>
+            <li><a href="socials.html">Socials</a></li>
+        </ul>
+    </header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <button data-tooltip="COPIED" id="ip-button" class="ip-button"><i class="mdi mdi-content-copy"></i>  PYXELON IP</button>
+    <div class="cards-container">
+        <div class="rank-card">
+            <img class="badge" src="vip_badge.png" alt="">
+            <h2 class="title">VIP</h2>
+            <h3 class="rank-price">$1.99 / month</h3>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>2 Cosmetics from every category</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>5 Home Slots </h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>More priority to staff</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Special perks like /fly in the lobby</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>VIP Special Kit</h5>
+            <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+        </div>
+        <div class="rank-card popular">
+            <img src="p_badge.png" alt="" class="badge">
+            <h2 class="title">Pyxelon</h2>
+            <h3 class="rank-price">$3.99 / month</h3>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>5 Cosmetics from every category</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>10 Home Slots </h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>High priority to staff</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Getting more perks like /craft</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Pyxelon Special Kit</h5>
+            <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+        </div>
+        <div class="rank-card">
+            <img src="p_plus_badge.png" alt="" class="badge">
+            <h2 class="title">Pyxelon<span>+</span></h2>
+            <h3 class="rank-price">$6.99 / month</h3>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>10 Cosmetics from every category</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>20 Home Slots </h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Highest priority to staff</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Full perks like /fly everywhere</h5>
+            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Pyxelon+ Special Kit</h5>
+            <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+        </div>
+    </div>
+    
+    <div id="myPopup" class="popup">
+        <div class="popup-content">
+            <button class="close-popup" onclick="closePopup()">&times;</button>
+            
+            <div class="popup-left">
+                <h3>Select Payment Method</h3>
+                <div class="payment-methods">
+                    <img src="asia.png" alt="">
+                    <p>0934593018312</p>
+                </div>
+                <div class="payment-methods">
+                    <img src="zain.png" alt="">
+                    <p>0934593018312</p>
+                </div>
+                <div class="payment-methods">
+                    <img src="paypal.png" alt="">
+                    <p>0934593018312</p>
+                </div>
+                <div class="payment-methods">
+                    <img src="mastercard.png" alt="">
+                    <p>0934593018312</p>
+                </div>
+            </div>
+
+            <div class="popup-right">
+                <div class="warning-icon">⚠️</div>
+                <h4>Important Notice</h4>
+                <p>You must add your username to the note during payment to receive your rank.</p>
+            </div>
+        </div>
+    </div>
+    <script src="base.js"></script>
+</body>
+</html>
