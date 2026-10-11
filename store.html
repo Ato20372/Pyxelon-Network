@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pyxelon Store</title>
     <link rel="icon" type="image/png" href="logo.png">
-    <style>
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.9.96/css/materialdesignicons.min.css" integrity="sha512-8G2pIpgpIJsq+hXzWgiRCQ1q++YBWoPwTvWS7WqZh9QhCOPzzC6nQC/ZYep1g6H3D2pnlm9yXl5BtyI+c6Whog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="store.css">
 </head>
@@ -23,69 +22,94 @@
     </header>
     <img src="logo.png" alt="Logo" class="logo">
     <button data-tooltip="COPIED" id="ip-button" class="ip-button"><i class="mdi mdi-content-copy"></i>  PYXELON IP</button>
-    <div class="cards-container">
-        <div class="rank-card">
-            <img class="badge" src="vip_badge.png" alt="">
-            <h2 class="title">VIP</h2>
-            <h3 class="rank-price">$1.99 / month</h3>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>8 Cosmetics</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>5 Slots Across All Features</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Special perks for every gamemode</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>VIP Special Kit for every gamemode</h5>
-            <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+
+    <!-- ===== RANKS ===== -->
+    <section class="store-section ranks-section">
+        <div class="section-heading">
+            <h2>Ranks</h2>
+            <p>Unlock perks, cosmetics and kits across every gamemode</p>
         </div>
-        <div class="rank-card popular">
-            <img src="p_badge.png" alt="" class="badge">
-            <h2 class="title">Pyxelon</h2>
-            <h3 class="rank-price">$3.99 / month</h3>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>15 Cosmetics</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>8 Slots Across All Features</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>More perks for every gamemode</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Pyxelon Special Kit</h5>
-            <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+        <div class="cards-container">
+            <div class="rank-card">
+                <img class="badge" src="vip_badge.png" alt="">
+                <h2 class="title">VIP</h2>
+                <h3 class="rank-price">$1.99 / month</h3>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>8 Cosmetics</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>5 Slots Across All Features</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Special perks for every gamemode</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>VIP Special Kit for every gamemode</h5>
+                <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+            </div>
+            <div class="rank-card popular">
+                <img src="p_badge.png" alt="" class="badge">
+                <h2 class="title">Pyxelon</h2>
+                <h3 class="rank-price">$3.99 / month</h3>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>15 Cosmetics</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>8 Slots Across All Features</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>More perks for every gamemode</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Pyxelon Special Kit</h5>
+                <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+            </div>
+            <div class="rank-card">
+                <img src="p_plus_badge.png" alt="" class="badge">
+                <h2 class="title">Pyxelon<span>+</span></h2>
+                <h3 class="rank-price">$6.99 / month</h3>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>25 Cosmetics</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Full Slots Across All Features</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Full perks for every gamemode</h5>
+                <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Pyxelon+ Special Kit</h5>
+                <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+            </div>
         </div>
-        <div class="rank-card">
-            <img src="p_plus_badge.png" alt="" class="badge">
-            <h2 class="title">Pyxelon<span>+</span></h2>
-            <h3 class="rank-price">$6.99 / month</h3>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Custom prefix in the chat</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>25 Cosmetics</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Full Slots Across All Features</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Full perks for every gamemode</h5>
-            <h5 class="rank-ability"><i class="mdi mdi-check-circle"></i>Pyxelon+ Special Kit</h5>
-            <button class="cards-button" onclick="openPopup()">Purchase Rank ➔</button>
+    </section>
+
+    <!-- ===== CRATE KEYS ===== -->
+    <section class="store-section keys-section">
+        <div class="section-heading">
+            <h2><i class="mdi mdi-key-variant"></i>Crate Keys</h2>
+            <p>Open crates and win exclusive rewards</p>
         </div>
-    </div>
-    <div class="cards-container">
-        <div class="rank-card">
-            <img src="Common.png" class="badge">
-            <h2 class="title"><span style="color:#00D743;">Common</span> Key</h2>
-            <h3 class="rank-price">0.50$</h3>
-            <h5 class="rank-ability">The Common Key is a key to open the common crate (obtainable by keyall)</h5>
-            <button class="cards-button" onclick="openPopup()">Purchase Key ➔</button>
+        <div class="cards-container">
+            <div class="key-card" style="--key-color:#00D743; --key-rgb:0,215,67;">
+                <span class="key-tag">Keyall</span>
+                <div class="key-image-wrap">
+                    <img src="Common.png" alt="Common Key">
+                </div>
+                <h3><span>Common</span> Key</h3>
+                <p class="key-desc">The Common Key is a key to open the common crate (obtainable by keyall)</p>
+                <div class="key-price">0.50$</div>
+                <button class="key-button" onclick="openPopup()">Purchase Key ➔</button>
+            </div>
+            <div class="key-card featured" style="--key-color:#FF3400; --key-rgb:255,52,0;">
+                <span class="key-tag">Popular</span>
+                <div class="key-image-wrap">
+                    <img src="Infernal.png" alt="Infernal Key">
+                </div>
+                <h3><span>Infernal</span> Key</h3>
+                <p class="key-desc">The Infernal Key is a key to open the infernal crate</p>
+                <div class="key-price">1.50$</div>
+                <button class="key-button" onclick="openPopup()">Purchase Key ➔</button>
+            </div>
+            <div class="key-card" style="--key-color:#8A00FF; --key-rgb:138,0,255;">
+                <span class="key-tag">Rare</span>
+                <div class="key-image-wrap">
+                    <img src="Mythic.png" alt="Mythic Key">
+                </div>
+                <h3><span>Mythic</span> Key</h3>
+                <p class="key-desc">The Mythic Key is a key to open the mythic crate</p>
+                <div class="key-price">2.99$</div>
+                <button class="key-button" onclick="openPopup()">Purchase Key ➔</button>
+            </div>
         </div>
-        <div class="rank-card popular">
-            <img src="Infernal.png" class="badge">
-            <h2 class="title"><span style="color:#FF3400;">Infernal</span> Key</h2>
-            <h3 class="rank-price">1.50$</h3>
-            <h5 class="rank-ability">The Infernal Key is a key to open the infernal crate</h5>
-            <button class="cards-button" onclick="openPopup()">Purchase Key ➔</button>
-        </div>
-        <div class="rank-card">
-            <img src="Mythic.png" class="badge">
-            <h2 class="title"><span style="color:#8A00FF;">Mythic</span> Key</h2>
-            <h3 class="rank-price">2.99$</h3>
-            <h5 class="rank-ability">The Mythic Key is a key to open the mythic crate</h5>
-            <button class="cards-button" onclick="openPopup()">Purchase Key ➔</button>
-        </div>
-    </div>
-    
+    </section>
+
     <div id="myPopup" class="popup">
         <div class="popup-content">
             <button class="close-popup" onclick="closePopup()">&times;</button>
-            
+
             <div class="popup-left">
                 <h3>Select Payment Method</h3>
                 <div class="payment-methods">
@@ -113,6 +137,11 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Made by <span>Attura</span>. All rights reserved.</p>
+    </footer>
+
     <script src="base.js"></script>
 </body>
 </html>
