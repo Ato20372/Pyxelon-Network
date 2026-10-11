@@ -5,6 +5,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -12,10 +15,16 @@ body {
     min-height: 100vh;
     background: radial-gradient(circle at center, #151522 0%, #08080a 100%);
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     display: none;
 }
+img {
+    max-width: 100%;
+}
+
+/* ---------- Header ---------- */
 .header {
     background: rgba(12, 12, 18, 0.85);
     backdrop-filter: blur(10px);
@@ -63,37 +72,13 @@ body::-webkit-scrollbar {
     color: rgb(0, 204, 255);
 }
 
-.cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    width: 100%;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-.rank-card {
-    background: linear-gradient(145deg, #121218, #0d0d12);
-    border-radius: 16px;
-    width: 320px;
-    padding: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.rank-card:hover {
-    border-color: rgb(0, 204, 255);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 204, 255, 0.2);
-}
-.rank-card.popular {
-    border: 1px solid rgba(0, 204, 255, 0.4);
-    background: linear-gradient(145deg, #131722, #0d0f17);
-}
-.rank-card.popular:hover {
-    border-color: rgb(0, 204, 255);
+/* ---------- Top area ---------- */
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0 10px 0;
+    border-radius: 100%;
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
 }
 .ip-button {
     background: linear-gradient(145deg, #121218, #0d0d12);
@@ -128,6 +113,72 @@ body::-webkit-scrollbar {
 }
 .ip-button:active {
     transform: scale(0.95);
+}
+
+/* ---------- Sections ---------- */
+.store-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px 20px;
+}
+.section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.section-heading h2 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.section-heading p {
+    color: #898996;
+    font-size: 15px;
+    margin-top: 6px;
+}
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    border-radius: 3px;
+    margin: 14px auto 0;
+    background: linear-gradient(to right, rgb(0, 81, 255), rgb(0, 204, 255));
+}
+
+/* ---------- Grids (desktop: 3, tablet: 2, mobile: 1) ---------- */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* ---------- Rank cards ---------- */
+.rank-card {
+    background: linear-gradient(145deg, #121218, #0d0d12);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 340px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.rank-card:hover {
+    border-color: rgb(0, 204, 255);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 204, 255, 0.2);
+}
+.rank-card.popular {
+    border: 1px solid rgba(0, 204, 255, 0.4);
+    background: linear-gradient(145deg, #131722, #0d0f17);
+}
+.rank-card.popular:hover {
+    border-color: rgb(0, 204, 255);
 }
 .cards-button {
     width: 100%;
@@ -166,13 +217,6 @@ body::-webkit-scrollbar {
 .title {
     text-align: center;
 }
-.logo {
-    width: 100px;
-    height: 100px;
-    margin: 10px 0 10px 0;
-    border-radius: 100%;
-    box-shadow: 0 0 20px rgba(0, 204, 255, 0.2);
-}
 .badge {
     width: 100px;
     height: auto;
@@ -180,6 +224,188 @@ body::-webkit-scrollbar {
     margin-left: auto;
 }
 
+/* ---------- Keys section (its own look) ---------- */
+.keys-section {
+    max-width: 1100px;
+    margin: 40px 20px 50px;
+    padding: 40px 30px 45px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background:
+        radial-gradient(ellipse at top, rgba(138, 0, 255, 0.12), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(255, 52, 0, 0.08), transparent 60%),
+        rgba(10, 10, 16, 0.7);
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+.keys-section .section-heading h2 {
+    background: linear-gradient(90deg, #00D743, #FF3400, #8A00FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.keys-section .section-heading h2 i {
+    -webkit-text-fill-color: initial;
+    color: #ffffff;
+    margin-right: 8px;
+}
+.key-card {
+    --key-color: #00ccff;
+    --key-rgb: 0, 204, 255;
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    padding: 28px 22px 22px;
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(var(--key-rgb), 0.22), transparent 65%),
+        linear-gradient(180deg, #14141c, #0b0b10);
+    border: 1px solid rgba(var(--key-rgb), 0.35);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5), 0 0 22px rgba(var(--key-rgb), 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.key-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--key-color);
+    box-shadow: 0 0 14px var(--key-color);
+}
+.key-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+    pointer-events: none;
+}
+.key-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--key-color);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 34px rgba(var(--key-rgb), 0.35);
+}
+.key-card:hover::after {
+    left: 130%;
+}
+.key-card.featured {
+    border-color: rgba(var(--key-rgb), 0.7);
+}
+.key-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(var(--key-rgb), 0.18);
+    border: 1px solid rgba(var(--key-rgb), 0.5);
+    color: var(--key-color);
+}
+.key-image-wrap {
+    width: 120px;
+    height: 120px;
+    margin: 10px 0 14px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(var(--key-rgb), 0.25), transparent 70%);
+    border: 1px dashed rgba(var(--key-rgb), 0.4);
+    animation: keyFloat 3.5s ease-in-out infinite;
+}
+.key-image-wrap img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(var(--key-rgb), 0.7));
+}
+.key-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.key-card h3 span {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--key-color) 70%, black), var(--key-color) 45%, color-mix(in srgb, var(--key-color) 35%, white));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px rgba(var(--key-rgb), 0.55));
+    animation: keyTitleShine 4s linear infinite;
+}
+.key-desc {
+    color: #898996;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0 18px;
+    flex: 1;
+}
+.key-price {
+    font-size: 22px;
+    font-weight: 800;
+    padding: 6px 22px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    color: var(--key-color);
+    background: rgba(var(--key-rgb), 0.12);
+    border: 1px solid rgba(var(--key-rgb), 0.4);
+}
+.key-button {
+    width: 100%;
+    height: 46px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #08080a;
+    background: var(--key-color);
+    transition: all 0.3s ease;
+}
+.key-button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.15);
+    box-shadow: 0 6px 20px rgba(var(--key-rgb), 0.45);
+}
+.key-button:active {
+    transform: translateY(1px);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 22px 20px;
+    text-align: center;
+    background: rgba(12, 12, 18, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer p {
+    color: #898996;
+    font-size: 14px;
+}
+.footer span {
+    color: rgb(0, 204, 255);
+    font-weight: 600;
+}
+
+/* ---------- Popup ---------- */
 .popup {
     display: none;
     position: fixed;
@@ -190,6 +416,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    overflow-y: auto;
 }
 .popup-content {
     background: #0f1015;
@@ -290,16 +517,8 @@ body::-webkit-scrollbar {
 .close-popup:hover {
     color: #ffffff;
 }
-@media (max-width: 600px) {
-    .popup-content {
-        flex-direction: column;
-    }
-    .popup-right {
-        border-left: none;
-        border-top: 1px solid rgba(255, 71, 87, 0.15);
-        padding: 25px;
-    }
-}
+
+/* ---------- Animations ---------- */
 @keyframes popupFadeIn {
     from {
         opacity: 0;
@@ -308,5 +527,85 @@ body::-webkit-scrollbar {
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
+    }
+}
+@keyframes keyTitleShine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+@keyframes keyFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+/* ---------- Responsive ---------- */
+/* Tablet: 2 cards per row */
+@media (max-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+    /* a lonely last card sits centered on its own row */
+    .cards-container > :last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
+    .header {
+        padding: 0 24px;
+    }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 640px) {
+    .header {
+        padding: 0 16px;
+    }
+    .brand-name {
+        font-size: 16px;
+    }
+    .nav-links {
+        gap: 16px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .store-section {
+        padding: 24px 16px;
+    }
+    .section-heading h2 {
+        font-size: 24px;
+    }
+    .keys-section {
+        margin: 30px 12px 40px;
+        padding: 30px 16px 32px;
+        border-radius: 20px;
+    }
+    .rank-card,
+    .key-card {
+        max-width: 400px;
+    }
+    .popup-content {
+        flex-direction: column;
+    }
+    .popup-left {
+        padding: 25px 20px;
+    }
+    .popup-right {
+        border-left: none;
+        border-top: 1px solid rgba(255, 71, 87, 0.15);
+        padding: 25px;
+    }
+}
+
+/* Very small phones: hide brand text so the nav fits */
+@media (max-width: 400px) {
+    .brand-name {
+        display: none;
+    }
+    .header {
+        justify-content: center;
     }
 }
